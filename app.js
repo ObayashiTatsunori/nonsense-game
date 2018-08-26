@@ -9,7 +9,7 @@ var types = QUESTION.split('').map(function(str) {
     document.querySelector('.container').appendChild(type);
     return type;
 });
-// 追記 ココカラ
+
 var timer = null;
 var startTime = 0;
 
