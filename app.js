@@ -1,12 +1,27 @@
-var problem_list = ["aaaaaaaaaa", "bbbbbbb", "cccccccc", "ddddddddd", "eeeeeeeeeee"];
+var problem_list = ["orenoyumehasubeteFacebookdekanaeteikukara",
+    "morihirokigaitakedo、oobayashinoshigotoppuriwomecchiyahometeta",
+    "minagenyasutairuninatteikuna",
+    "jidaigaorenioitsuitekita。。。",
+    "kabukahamadamadasagaru"
+];
+var problem_list_kana = ["俺の夢は全てFacebookで叶えていくから",
+    "森ひろきがいたけど、大林の仕事っぷりをメッチャ褒めてた",
+    "皆原野スタイルになっていくな",
+    "時代が俺に追いついてきた。。。",
+    "株価はまだまだ下がる"
+];
 var num = Math.round(Math.random() * (problem_list.length - 1));
 var QUESTION = problem_list[num];
-console.log(num);
+var kana = problem_list_kana[num];
+var p = document.getElementById('kana');
+p.innerHTML = kana;
+console.log(kana);
 var types = QUESTION.split('').map(function(str) {
     var type = document.createElement('span');
     type.className = 'type';
     type.textContent = str;
     document.querySelector('.container').appendChild(type);
+
     return type;
 });
 
@@ -61,7 +76,7 @@ document.addEventListener('keydown', function(event) {
             next.classList.add('ok');
             types.shift();
             if (types.length === 0) {
-                timerEnd(); // 変更
+                timerEnd();
             }
         } else {
             next.classList.add('ng');
